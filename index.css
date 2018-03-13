@@ -1,12 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    background: #222;
+    background: #eee;
 }
 
+
+/* Navbar area */
 a {
     text-decoration: none;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 
 ul {
     list-style: none;
@@ -18,7 +26,7 @@ ul {
     -webkit-padding-start: 0px;
 }
 
-.clearfix {
+.clearfix:after {
     content: '';
     display: block;
     clear: both;
@@ -26,6 +34,9 @@ ul {
 
 .top-nav {
     padding: 20px 16px 20px 16px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -73,4 +84,136 @@ nav {
 
 .nav-sub li a:hover {
     border-bottom: 3px solid #e8676b;
+}
+
+
+/* Banner Area */
+.banner {
+    background-image: url(./img/1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 516px;
+}
+
+.banner-shade {
+    height: 516px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+/* Card area */
+
+.profile-card {
+    max-width: 940px;
+    background: rgb(255, 255, 255);
+    margin: 0 auto;
+    /* padding: 57px 65px 68px 50px; */
+    box-sizing: border-box;
+}
+
+.card-upper {
+    padding: 50px;
+}
+
+.card-profile {
+    float: left;
+    
+}
+
+.card-info {
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+
+.card-info .hello {
+    background-color: #e6686a;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 4px 16px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.card-info .hello .triangle {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: transparent;
+    border-width: 10px;
+    border-style: solid;
+    border-left: 10px solid #e6686a;
+    top: 65%;
+    left: 5px;
+    
+}
+
+.card-info .name {
+    font-size: 36px;
+    color: rgb(61, 68, 81);
+    margin-bottom: 5px;
+}
+
+.card-info .name-title {
+    font-size: 18px;
+    font-family: "Open Sans";
+    color: rgb(61, 68, 81);
+    margin-bottom: 25px;
+}
+
+.card-info hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+    margin-bottom: 30px;
+}
+
+.card-info dl dt,
+.card-info dl dd {
+    padding: 5px 0;
+}
+
+.card-info dl dt {
+    width: 30%;
+    float: left;
+    
+}
+
+.card-info dl dd {
+    width: 70%;
+    color: rgb(157, 160, 167);
+}
+
+
+/* card footer area */
+
+.card-social-media {
+    text-align: center;
+    background-color: #e6686a;
+}
+.card-social-media a {
+    display: inline-block;
+    padding: 7.5px 0;
+    width: 40px;
+    line-height: 25px;
+    margin: 16px;
+    border-radius: 50%;
+}
+
+.card-social-media a svg {
+    height: 25px;
+    width: 25px;
+    fill: white;
+    vertical-align: top;
+}
+
+.card-social-media a:hover {
+    background: #CF5D5F;
 }
