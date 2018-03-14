@@ -4,6 +4,11 @@ body {
     background: #eee;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 /* Navbar area */
 a {
@@ -42,7 +47,10 @@ ul {
 .nav-logo {
     color: #e8676b;
     font-size: 24px;
-    font-family: 'Arial Black', "Arial Rounded MT Bold", Helvetica, sans-serif;
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
     float: left;
     line-height: 40px;
 }
@@ -67,8 +75,10 @@ nav {
 .nav-sub li {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 12px;
-    font-weight: bold;
+    font-family: "Open Sans";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
     margin-left: 15px;
     margin-right: 15px;
     float: left;
@@ -157,15 +167,25 @@ nav {
     
 }
 
-.card-info .name {
+.card-info .name .name-unique{
+    font-family: "Open Sans";
     font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.card-info .name {
+    font-family: "Open Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 100;
     color: rgb(61, 68, 81);
     margin-bottom: 5px;
 }
 
 .card-info .name-title {
     font-size: 18px;
-    font-family: "Open Sans";
+    font-family: "Open Sans" sans-serif;
     color: rgb(61, 68, 81);
     margin-bottom: 25px;
 }
@@ -185,13 +205,20 @@ nav {
 .card-info dl dt {
     width: 30%;
     float: left;
-    font-weight: bold;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
     
 }
 
 .card-info dl dd {
     width: 70%;
     color: rgb(157, 160, 167);
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 
@@ -231,7 +258,7 @@ nav {
 
 .download {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
     font-family: "Open Sans";
     text-transform: uppercase;
     color: rgb(61, 68, 81);
@@ -257,6 +284,57 @@ nav {
     margin: 0 auto;
     text-align: center;
     font-size: 1em;
-    line-height: 1.4em;
+    line-height: 2em;
     margin-bottom: 16px;
+}
+
+/* Skill section area */
+.skill-section {
+    margin: 85px 0;
+}
+
+.skill-section h2 {
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+.skillbar {
+    max-width: 940px;
+    margin: 0 auto;
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 45px 50px 0; 
+}
+
+.skillbar ul li:nth-child(even) {
+    float: right;
+}
+.skillbar ul li {
+    margin-bottom: 45px;
+    float: left;
+    width: 48%;
+}
+.skillbar ul .skillname {
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.progressbar {
+    width: 100%;
+    height: 5px;
+    border-radius: 3px;
+    background: rgb(255, 143, 147);
+}
+
+.progress {
+    width: 50%;
+    height: 100%;
+    background: rgb(232, 103, 107);
 }
