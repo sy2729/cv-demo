@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #eee;
+    background: rgb(239, 239, 239);;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -64,7 +64,7 @@ ul {
     margin-left: 4px;
 }
 
-nav {
+.top-nav nav {
     float: right;
 }
 
@@ -337,4 +337,104 @@ nav {
     width: 50%;
     height: 100%;
     background: rgb(232, 103, 107);
+}
+
+
+/* Protofolio Area */
+.portofolio {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.portofolio h2 {
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+.portofolio nav {
+    text-align: center;
+    display: inline-block;
+}
+.portofolio nav ul{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.portofolio nav ul li {
+    float: left;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.portofolio nav ul li:nth-child(1) {
+    margin-left: 0; 
+}
+
+.portofolio nav .bar {
+    display: block;
+    height: 5px;
+    background: #fff;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.portofolio nav .bar .bar-content {
+    height: 100%;
+    background: rgb(232, 103, 107);
+    width: 30px;
+    transition: all .5s;
+    border-radius: 3px;
+}
+
+.portofolio nav .bar.state-1 .bar-content {
+    margin-left: 0;
+    width: 30px;
+}
+.portofolio nav .bar.state-2 .bar-content {
+    margin-left: 70px;
+    width: 75px;
+}
+.portofolio nav .bar.state-3 .bar-content {
+    margin-left: 190px;
+    width: 90px;
+}
+.portofolio nav .bar.state-4 .bar-content {
+    margin-left: 320px;
+    width: 90px;
+}
+.portofolio nav .bar.state-5 .bar-content {
+    margin-left: 460px;
+    width: 72px;
+}
+
+/* Works Area */
+.works {
+    margin: 0 auto;
+    width: 910px;
+    height: 570px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.works .big, .works .small  {
+    position: absolute;
+}
+
+.works .big {
+    float: left;
+    left: 0;
+    top 0;
+}
+.works .small {
+    display: block;
+    left: 617px;   
+    top: 0;
+}
+
+.works .small img:nth-child(2) {
+    margin-top: 20px;
 }

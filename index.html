@@ -146,5 +146,51 @@
         </div>
     </section>
 
+    <div class="portofolio">
+        <h2>Portofolio</h2>
+        <nav>
+            <ul class="clearfix">
+                <li id="portAll">All</li>
+                <li id="portFrame">Framework</li>
+                <li id="portPho">Photography</li>
+                <li id="portVideo">Videography</li>
+                <li id="portUX">UX Design</li>
+            </ul>
+
+            <div class="bar" id="bar">
+                <div class="bar-content"></div>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        portAll.onclick = function() {
+            bar.className = "bar state-1"
+        }
+        portFrame.onclick = function() {
+            bar.className = "bar state-2"
+        }
+        portPho.onclick = function() {
+            bar.className = "bar state-3"
+        }
+        portVideo.onclick = function() {
+            bar.className = "bar state-4"
+        }
+        portUX.onclick = function() {
+            bar.className = "bar state-5"
+        }
+    </script>
+
+    <div class="works clearfix">
+        <div class="big">
+            <img src="./img/port-1.jpg" alt="port-1.jpg">
+        </div>
+        <div class="small">
+            <img src="./img/port-2.jpg" alt="port-2.jpg">
+            <img src="./img/port-3.jpg" alt="port-3.jpg">
+        </div>
+        
+    </div>
+
 </body>
 </html>
