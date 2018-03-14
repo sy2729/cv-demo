@@ -113,6 +113,8 @@ nav {
     margin: 0 auto;
     /* padding: 57px 65px 68px 50px; */
     box-sizing: border-box;
+    margin-top: -340px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 
 .card-upper {
@@ -183,6 +185,7 @@ nav {
 .card-info dl dt {
     width: 30%;
     float: left;
+    font-weight: bold;
     
 }
 
@@ -205,6 +208,7 @@ nav {
     line-height: 25px;
     margin: 16px;
     border-radius: 50%;
+    transition: all 0.3s ease-out;
 }
 
 .card-social-media a svg {
@@ -216,4 +220,43 @@ nav {
 
 .card-social-media a:hover {
     background: #CF5D5F;
+}
+
+
+/* download button */
+
+.download-resume-wrap {
+    text-align: center;
+}
+
+.download {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    color: rgb(61, 68, 81);
+    display: inline-block;
+    border: 1px solid rgb(203, 205, 207);
+    padding: 21px 55px;
+    line-height: 16px;
+    margin: 35px 0 40px 0;
+    transition: all 0.3s ease-out;
+}
+
+.download:hover {
+    opacity: 0.95;
+    text-decoration: none;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+/* self-introduction */
+.self-introduction {
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-bottom: 16px;
 }
