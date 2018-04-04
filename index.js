@@ -34,32 +34,48 @@ for(let i = 0; i < navs.length; i++) {
 //in-page auto scrolling with js
 var siteHrefs = document.querySelectorAll('.nav-sub li a');
 
-
-
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate);
 
 for(let i = 0; i < siteHrefs.length; i++) {
     siteHrefs[i].onclick = function(e) {
         var href = e.currentTarget.getAttribute('href');
         var targetedEl = document.querySelector(href);
-        // var elDistance = targetedEl.offsetTop
-
-        let n = 25;        //move times in total
-        let duration = 500/n         //the duration between each move
-        let currentTop = window.scrollY;
         let elementTop = targetedEl.offsetTop - 100;
-        let distance = (elementTop - currentTop) / n;
-        let i = 0;
-        var id = setInterval(function () {
-            console.log(distance)
-            if (i < n) {
-                i++;
-                window.scrollTo(0, currentTop + distance * i)
-            } else {
-                window.clearInterval(id)
-                return
-            }
-        }, duration)
+        var distance = Math.abs(window.scrollY - elementTop);
+        var time = Math.abs((distance / 100) * 200);
+        if(time > 2000) {time = 2000};
+        var coords = {y: window.scrollY }; // Start at (0, 0)
+        var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
+            .to({ y: elementTop }, time) // Move to (300, 200) in 1 second.
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .onUpdate(function () {
+                window.scrollTo(coords.x, coords.y)
+            })
+            .start(); 
+//----------------------previous code ----------------------------creat animated scrolling with vallina js-----------
+        // var elDistance = targetedEl.offsetTop
+        // let n = 25;        //move times in total
+        // let duration = 500/n         //the duration between each move
+        // let currentTop = window.scrollY;
+        // let elementTop = targetedEl.offsetTop - 100;
+        // let distance = (elementTop - currentTop) / n;
+        // let i = 0;
+        // var id = setInterval(function () {
+        //     console.log(distance)
+        //     if (i < n) {
+        //         i++;
+        //         window.scrollTo(0, currentTop + distance * i)
+        //     } else {
+        //         window.clearInterval(id)
+        //         return
+        //     }
+        // }, duration)
         // window.scrollTo(0, elDistance - 100);
+//----------------------previous code ----------------------------creat animated scrolling with vallina js-----------
         e.preventDefault();
     }
 }
