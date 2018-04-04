@@ -21,19 +21,47 @@
 </head>
 <body>
 
+    <div class="loadingWrapper">
+        <div id="loading"></div>
+    </div>
+
     <div class="top-nav clearfix">
         <div class="nav-logo">
             <span class="logo"><a href="">RS</a></span><span class="card"><a href="">card</a></span>
         </div>
         <nav>
             <ul class="nav-sub clearfix">
-                <li><a href="">About</a></li>
-                <li><a href="">Skill</a></li>
-                <li><a href="">Work</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Calender</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Others</a></li>
+                <li>
+                    <a href="#siteAbout">About</a>
+                </li>
+                <li>
+                    <a href="#siteSkill">Skill</a>
+                </li>
+                <li class="submenu">
+                    <a href="#siteWork" >Work</a>
+                    <ul class="nav-sub-nav">
+                        <li>work1</li>
+                        <li>work2</li>
+                        <li>work3</li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="#siteBlog" >Blog</a>
+                    <ul class="nav-sub-nav">
+                        <li>Blog1</li>
+                        <li>Blog2</li>
+                        <li>Blog3</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#siteCalender">Calender</a>
+                </li>
+                <li>
+                    <a href="#siteContact">Contact</a>
+                </li>
+                <li>
+                    <a href="#siteOthers">Others</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -42,7 +70,7 @@
         <div class="banner-shade"></div>
     </div>
 
-    <main class="profile-card">
+    <main class="profile-card" id="siteAbout">
         <div class="card-upper clearfix">
             <div class="card-profile">
                 <img src="./img/2.jpg" alt="profile" width="299" height="347">
@@ -102,7 +130,7 @@
         partners.
     </p>
 
-    <section class="skill-section">
+    <section class="skill-section" id="siteSkill">
         <h2>Professional Skill</h2>
         <div class="skillbar clearfix">
             <ul>
@@ -146,7 +174,7 @@
         </div>
     </section>
 
-    <div class="portofolio">
+    <div class="portofolio"  id="siteWork">
         <h2>Portofolio</h2>
         <nav>
             <ul class="clearfix">
@@ -192,5 +220,7 @@
         
     </div>
 
+
+    <script src="./index.js"></script>
 </body>
 </html>

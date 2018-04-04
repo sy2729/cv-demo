@@ -10,6 +10,62 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
+/* loading animation */
+.loadingWrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #aaa;
+    z-index: 10000;
+}
+
+.loadingWrapper.loaded {
+    display: none;
+}
+
+#loading {
+    width: 15px;
+    height: 15px;
+    background-color: #222;
+    border-radius: 50%;
+    animation: explode linear 1s infinite;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#loading:after {
+    content: "";
+    width: inherit;
+    height: inherit;
+    background: inherit;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: inherit;
+    animation: inherit;
+    animation-delay: 0s;
+}
+
+@keyframes explode {
+  from {
+    transform: scale(1)
+      opacity: .8;
+  }
+  to {
+    transform: scale(3);
+      opacity: 0;
+  }
+}
+
 /* Navbar area */
 a {
     text-decoration: none;
@@ -42,6 +98,18 @@ ul {
     position: fixed;
     width: 100%;
     box-sizing: border-box;
+    transition: all .4s;
+}
+
+.top-nav.navChange {
+    background-color: #fff;
+    box-shadow: 1px 5px 6px 0 rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    padding: 15px 16px 15px 16px;
+}
+
+.top-nav.navChange .nav-sub li{
+    color: #3D4450;
 }
 
 .nav-logo {
@@ -83,17 +151,65 @@ ul {
     margin-right: 15px;
     float: left;
     line-height: 40px;
+    position: relative;
 }
 
 .nav-sub li a {
     color: inherit;
     padding-bottom: 5px;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
+    position: relative;
 }
 
-.nav-sub li a:hover {
-    border-bottom: 3px solid #e8676b;
+.nav-sub li a:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    bottom: -2px;
+    left: 0;
+    background: #e8676b;
+    display: block;
+    transition: all .4s;
+}
+
+.nav-sub li.active a:after {
+    width: 100%;
+}
+
+
+.submenu .nav-sub-nav {
+    position: absolute;
+    white-space: nowrap;
+    color: #3D4450;
+    right: 0;
+    top: 100%;
+    transition: all .4s;
+    display: none;
+    background: #FFFFFF;
+    box-shadow: 1px 5px 6px 0 rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+}
+
+.nav-sub-nav li{
+    color: #3D4450;
+    cursor: pointer;
+}
+
+
+.submenu.active .nav-sub-nav {
+    display: block;
+    animation: submenuSlide .4s ease-in-out;
+}
+
+@keyframes submenuSlide {
+    from {
+        margin-right: 100%;
+        opacity: 0;
+    }
+    to {
+        margin-right: 0%;
+        opacity: 1;
+    }
 }
 
 
