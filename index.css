@@ -172,7 +172,7 @@ ul {
     transition: all .4s;
 }
 
-.nav-sub li.active a:after {
+.nav-sub li.active a:after, .nav-sub li.highlight a:after {
     width: 100%;
 }
 
@@ -212,6 +212,16 @@ ul {
     }
 }
 
+[data-x].offset {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+[data-x] {
+    transform: translateY(0);
+    transition: all .4s;
+    opacity: 1;
+}
 
 /* Banner Area */
 .banner {
@@ -442,17 +452,25 @@ ul {
     margin-bottom: 4px;
 }
 
-.progressbar {
+.skill-section .progressbar {
     width: 100%;
     height: 5px;
     border-radius: 3px;
-    background: rgb(255, 143, 147);
+    background: #FFE9EA;
 }
 
-.progress {
+.skill-section.offset .skillbar ul li .progress {
+    width: 0%;
+    height: 100%;
+    background: rgb(232, 103, 107);
+}
+
+
+.skill-section .skillbar ul li .progress {
     width: 50%;
     height: 100%;
     background: rgb(232, 103, 107);
+    transition: all 4s;
 }
 
 
@@ -534,6 +552,7 @@ ul {
     height: 570px;
     position: relative;
     margin-bottom: 100px;
+    transform: translateY(50px)
 }
 
 .works .big, .works .small  {

@@ -3,11 +3,23 @@ window.onload = function () {
     var loading = document.querySelector('.loadingWrapper');
     loading.classList.add('loaded');
     checkHeight();
+    //giving sometime to show the first animated block
+    setTimeout(() => {
+        checkCloserTag();
+    }, 500);
 }
 
 //navbar sticking to the top
 window.onscroll = function(e) {
     checkHeight();
+    checkCloserTag();
+}
+
+
+var navTag = document.querySelectorAll('[data-x]');
+
+for (let i = 0; i < navTag.length; i++) {
+    navTag[i].classList.add('offset')
 }
 
 var navs = document.querySelectorAll('.nav-sub li');
@@ -79,6 +91,35 @@ for(let i = 0; i < siteHrefs.length; i++) {
         e.preventDefault();
     }
 }
+
+
+
+//highlight current view section navBars
+var checkCloserTag = function() {
+    var navTag = document.querySelectorAll('[data-x]');
+
+    var minIndex = 0;
+    var scrollY = window.scrollY;
+    for(let i = 1; i < navTag.length; i++) {
+        if(Math.abs(scrollY - navTag[i].offsetTop) < Math.abs(scrollY - navTag[minIndex].offsetTop)) {
+            minIndex = i;
+        }
+    }
+
+    navTag[minIndex].classList.remove('offset')
+
+    var id = navTag[minIndex].id;
+    var selectedID = document.querySelector(`[href="#${id}"]`);
+    var selectedParentNode = selectedID.parentNode;
+    var siblingNode = selectedParentNode.parentNode.children;
+    for (let i = 0; i < siblingNode.length; i++) {
+        siblingNode[i].classList.remove('highlight');
+    }
+    selectedParentNode.classList.add('highlight')
+}
+
+
+
 
 
 
