@@ -131,7 +131,7 @@
     </p>
 
     <section class="skill-section" id="siteSkill" data-x>
-        <h2>Professional Skill</h2>
+        <h2 class="heading">Professional Skill</h2>
         <div class="skillbar clearfix">
             <ul>
                 <li>
@@ -175,7 +175,7 @@
     </section>
 
     <div class="portofolio"  id="siteWork" data-x>
-        <h2>Portofolio</h2>
+        <h2 class="heading">Portofolio</h2>
         <nav>
             <ul class="clearfix">
                 <li id="portAll">All</li>
@@ -220,7 +220,26 @@
         
     </div>
 
+
+    <section class="message-board">
+        <h2 class="heading">Leave A Message to Me</h2>
+        <div class="message center">
+            <ul class="message-list">
+
+            </ul>
+        </div>
+        <form action="" class="leaveMessage center">
+            <label for="">Name</label>
+            <input type="text" class="name-content">
+            <label for="">Message</label>
+            <input type="text" class="message-content">
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script src="./index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.1/dist/av-min.js"></script>
+    <script src="./message.js"></script>
 </body>
 </html>

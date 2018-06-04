@@ -419,7 +419,7 @@ ul {
     margin: 85px 0;
 }
 
-.skill-section h2 {
+h2.heading {
     color: #3d4451;
     font-size: 34px;
     line-height: 1.2;
@@ -478,14 +478,6 @@ ul {
 .portofolio {
     margin-bottom: 30px;
     text-align: center;
-}
-.portofolio h2 {
-    color: #3d4451;
-    font-size: 34px;
-    line-height: 1.2;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 33px;
 }
 
 .portofolio nav {
@@ -572,4 +564,18 @@ ul {
 
 .works .small img:nth-child(2) {
     margin-top: 20px;
+}
+.message {
+    width: 500px;
+}
+.message > .message-list > li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+
+}
+.leaveMessage {
+    width: 500px;
+}
+.center {
+    margin: 30px auto;    
 }
