@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6 {
 
 @keyframes explode {
   from {
-    transform: scale(1)
+    transform: scale(1);
       opacity: .8;
   }
   to {
@@ -565,17 +565,54 @@ h2.heading {
 .works .small img:nth-child(2) {
     margin-top: 20px;
 }
-.message {
+.message-board > .message {
     width: 500px;
 }
-.message > .message-list > li {
+.message-board > .message > .message-list > li {
     padding: 10px 5px;
     border-bottom: 1px solid #ddd;
 
 }
-.leaveMessage {
+.message-board > .leaveMessage {
     width: 500px;
 }
 .center {
     margin: 30px auto;    
+}
+
+.message-board > .submit-animation {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+.message-board > .submit-animation.active {
+    display: block;
+}
+.message-board > .submit-animation > div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #CF5D5F;
+    animation: submit 0.5s infinite ease-in-out alternate;
+    transform-origin: center;
+    /* will-change: transform-origin; */
+}
+@keyframes submit {
+    0% {
+        /* transform: translateX(-50px); */
+        transform: scale(0.5);
+    }
+    100% {
+        /* transform: translateX(50px); */
+        transform: scale(1);
+    }
+}
+
+.message-board > .submit-animation > div:nth-child(2) {
+    animation-delay: 250ms;
+    
+}
+.message-board > .submit-animation > div:nth-child(3) {
+    animation-delay: 500ms;
 }

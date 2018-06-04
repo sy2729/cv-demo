@@ -4,7 +4,7 @@ setTimeout(() => {
 }, 0);
 
 var view = document.querySelector('.message-board');
-
+view.querySelector('.submit-animation').style.display = 'flex';
 
 
 
@@ -59,13 +59,15 @@ let controller = {
                 li.textContent = `${i.name||'N/A'} : ${i.words}`;
                 this.messageList.appendChild(li);
             })
+           this.submitAnimation(false);
         });      
     },
-
+    
     bindEvent: function(){
         this.form.onsubmit = (e)=> {
-          e.preventDefault();
-          this.saveMessage();  
+            e.preventDefault();
+        this.submitAnimation(true);  
+        this.saveMessage();  
         }
     },
 
@@ -76,14 +78,21 @@ let controller = {
         let name = nameEl.value;
         var value = messageContent.value;
         model.save(name, value).then((object)=> {
-            alert('submit successfully')
             let li = document.createElement('li');
             li.textContent = nameEl.value + ": " + messageContent.value;
             this.messageList.appendChild(li);
             nameEl.value = '';
             messageContent.value = '';
+            this.submitAnimation(false);
         })
-    }
+    },
 
+    submitAnimation: function(switchOn) {
+        if(switchOn) {
+            this.view.querySelector('.submit-animation').style.display = 'flex';
+        }else {
+            this.view.querySelector('.submit-animation').style.display = 'none';
+        }
+    }
 
 };
