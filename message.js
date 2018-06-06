@@ -66,8 +66,7 @@ let controller = {
     bindEvent: function(){
         this.form.onsubmit = (e)=> {
             e.preventDefault();
-        this.submitAnimation(true);  
-        this.saveMessage();  
+            this.saveMessage();  
         }
     },
 
@@ -77,14 +76,19 @@ let controller = {
         let nameEl = myForm.querySelector('.name-content');
         let name = nameEl.value;
         var value = messageContent.value;
-        model.save(name, value).then((object)=> {
-            let li = document.createElement('li');
-            li.textContent = nameEl.value + ": " + messageContent.value;
-            this.messageList.appendChild(li);
-            nameEl.value = '';
-            messageContent.value = '';
-            this.submitAnimation(false);
-        })
+        if (this.emptyCheck(name, value)) {
+            this.submitAnimation(true);
+            model.save(name, value).then((object) => {
+                let li = document.createElement('li');
+                li.textContent = nameEl.value + ": " + messageContent.value;
+                this.messageList.appendChild(li);
+                nameEl.value = '';
+                messageContent.value = '';
+                this.submitAnimation(false);
+            })
+        } else {
+            alert("Please fill out your info");
+        }
     },
 
     submitAnimation: function(switchOn) {
@@ -92,6 +96,14 @@ let controller = {
             this.view.querySelector('.submit-animation').style.display = 'flex';
         }else {
             this.view.querySelector('.submit-animation').style.display = 'none';
+        }
+    },
+
+    emptyCheck: function(value1, value2) {
+        if (value1 !== "" && value2 !== "") {
+            return true;
+        }else {
+            return false;
         }
     }
 
